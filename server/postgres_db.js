@@ -1,20 +1,16 @@
-import { Client } from "pg"
 import { STREAM_TYPE } from "../common/enums"
-
+import { db } from '@vercel/postgres';
 export class PostgresCoordinator {
     constructor() {
         this.connection = null
     }
 
     async _connect() {
-        for (let i = 0; i < 3; ++i) {
-            try {
-                this.connection = new Client({connectionTimeoutMillis: 1500})
-                await this.connection.connect()
-                return this
-            } catch (e) {
-                console.error("[_connect]", "error connecting", e)
-            }
+        try {
+            this.connection = await db.connect();
+            return this
+        } catch (e) {
+            console.error("[_connect]", "error connecting", e)
         }
 
         throw new Error("[_connect]: all connection attempts failed")
