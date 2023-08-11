@@ -1,9 +1,10 @@
-require('dotenv').config()
-const process = require("process")
-const fetch = require("node-fetch")
-const sqlite3 = require("sqlite3")
-const decode = require("html-entities").decode
-const pgClient = require("pg").Client
+import { fetchWithTimeout } from "../../../common/utils"
+import { Client as pgClient } from "pg"
+import { decode } from "html-entities"
+import sqlite3 from "sqlite3"
+
+// We have our own DB classes in this file to match updateVODList.
+// Don't refactor this out for now.
 
 class PostgresDatabase {
     constructor() {
@@ -116,7 +117,17 @@ function collect(item) {
     }
 }
 
-async function main() {
+export default async function handler(req, res) {
+    if (!process.env.CRON_SECRET_KEY) {
+        res.status(400).json({ error: "Feature not enabled." })
+        return
+    }
+
+    if (req.query.key !== (process.env.CRON_SECRET_KEY || "")) {
+        res.status(403).json({ error: "Incorrect key." })
+        return
+    }
+
     let db
     if (process.env.DATABASE_TYPE === "sqlite3") {
         db = new SQLiteDatabase()
@@ -125,16 +136,20 @@ async function main() {
     }
     
     let nextUrl = makeAPIURL()
-    while (nextUrl) {
-        const resp = await fetch(nextUrl)
+    let videosConsidered = 0
+    let error = null
+    while (nextUrl && videosConsidered < 100) {
+        const resp = await fetchWithTimeout(nextUrl, {}, 0, "YT API - Update VODs")
         if (resp.status !== 200) {
-            console.error("code:", resp.status)
+            console.error("[Update VODs] YouTube API error: code:", resp.status)
             console.error(await resp.json())
+            error = { what: "ytapi", code: resp.status }
             break
         }
         
         const data = await resp.json()
         await db.insertVods(data.items.map((video) => collect(video)))
+        videosConsidered += data.items.length
         
         if (data.nextPageToken) {
             nextUrl = makeAPIURL(data.nextPageToken)
@@ -144,8 +159,5 @@ async function main() {
     }
     
     await db.teardown()
+    return res.status(200).json({ result: { videosConsidered } })
 }
-
-main().then(() => {
-    process.exit(0)
-})

@@ -29,7 +29,7 @@ AllStrings["en"] = {
         StatusStreamQueued: "Next Stream",
         NoStreamDummyStatus: "Current Stream",
         NoStreamDummyTitle: "NOTHING BAUBAUBAUBAU",
-        MembersOnlySubtext: "(for Ruffians only!)",
+        MembersOnlySubtext: "(for Faunatics only!)",
         ThumbnailAltText: "Video Thumbnail"
     },
 
@@ -61,7 +61,7 @@ AllStrings["en"] = {
         PastStream: {
             immediate: "",
             forFuture: "",
-            forPast: `%@ without BauBau`,
+            forPast: `%@ without Fauna`,
             days: (days) => (days > 1 ? `${days} days` : `${days} day`),
             hours: (hours) => (hours > 1 ? `${hours} hours` : `${hours} hour`),
             minutes: (minutes) => (minutes > 1 ? `${minutes} minutes` : `${minutes} minute`),

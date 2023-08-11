@@ -11,7 +11,7 @@ export default async function handler(req, res) {
             ytStreamData: {
                 status: STREAM_STATUS.OFFLINE,
                 streamInfo: {
-                    link: "https://imissfuwamoco.com-vercel.app",
+                    link: "https://imissfuwamoco-needlesp.vercel.app",
                     title: "Page refresh required",
                     startTime: 1661590060000,
                     thumbnail: null,
