@@ -31,20 +31,20 @@
 }
 
 .streamInfo {
-    background: linear-gradient(rgba(166, 38, 57, 0.3) 0%, rgb(219, 50, 77) 100%);
-    border: 1px solid rgb(81,28,41);
+    background: linear-gradient(rgba(242, 205, 96, 0.3) 0%, rgb(242, 232, 99) 100%);
+    border: 1px solid rgb(242, 205, 96);
     border-radius: 6px;
     padding: 0.8rem;
     margin: 2rem auto;
     text-align: left;
-    box-shadow: 4px 4px 0px 1px rgba(255, 255, 255, 0.226);
+    box-shadow: 4px 4px 0px 1px rgba(0, 0, 0, 0.226);
     position: relative;
 }
 
 .videoBox img {
     margin-left: 0.8rem;
     border-radius: 3px;
-    border: 1px solid rgb(81,28,41);
+    border: 1px solid rgb(242, 205, 96);
 }
 
 .videoBox a {
@@ -75,27 +75,27 @@
 .videoBoxCaption {
     font-size: 80%;
     font-weight: bold;
-    color: rgb(66, 105, 90);
+    color: rgb(234, 242, 227);
     text-transform: uppercase;
 }
 
 .streamInfoLive, .streamInfoLive .videoBox img {
-    background: rgb(243, 78, 78);
+    background: rgb(242, 87, 87);
     border-color: #c70707;
 }
 
 .streamInfoLive .videoBoxCaption {
-    color: rgb(255, 240, 240);
+    color: rgb(234, 242, 227);
 }
 
 .streamInfoError {
-    background: black;
-    border-color: black;
-    color: rgb(235, 235, 235);
+    background: #121212;
+    border-color: #121212;
+    color: rgb(234, 242, 227);
 }
 
 .streamInfoLive a, .streamInfoLive p, .streamInfoError a {
-    color: white;
+    color: rgb(234, 242, 227);
 }
 
 .streamInfo p {
@@ -103,8 +103,8 @@
 }
 
 .pastStreamInfo {
-    background: rgb(174, 250, 197);
-    border-color: rgb(130, 206, 147);
+    background: rgb(242, 232, 99);
+    border-color: rgb(242, 205, 96);
     text-align: center;
 }
 
@@ -126,8 +126,8 @@
 
 .bigButton {
     display: block;
-    background: linear-gradient(rgb(70, 200, 101) 0%, rgb(36, 175, 66) 100%);
-    border: 1px solid #247938;
+    background: linear-gradient(rgb(242, 205, 96) 0%, rgb(242, 232, 99) 100%);
+    border: 1px solid #F2CD60;
     border-radius: 6px;
     padding: 0.8rem;
     margin: 2rem auto;
