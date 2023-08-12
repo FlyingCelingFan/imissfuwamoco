@@ -1,5 +1,6 @@
 import { STREAM_TYPE } from "../common/enums"
 import { db } from '@vercel/postgres';
+
 export class PostgresCoordinator {
     constructor() {
         this.connection = null

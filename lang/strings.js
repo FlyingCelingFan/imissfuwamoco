@@ -3,18 +3,18 @@ const AllStrings = {}
 // To add a new language, copypaste starting from this line...
 AllStrings["en"] = {
     CommonMetadata: {
-        HeaderSMTitle: "I MISS FUWAMOCO",
-        FooterText: "Not affiliated with FuwaMoco or hololive - Past stream data provided by Holodex - {0}",
+        HeaderSMTitle: "I MISS SHIORI",
+        FooterText: "Not affiliated with Shiori or hololive - Past stream data provided by Holodex - {0}",
         FooterSourceLink: "Source",
-        FooterStreamerLink: "FUWAMOCO Ch. hololive-EN"
+        FooterStreamerLink: "Shiori Novella Ch. hololive-EN"
     },
 
     Main: {
-        PageTitle: "I MISS FUWAMOCO",
-        DontMissCaption: "I Don't Miss FuwaMoco",
+        PageTitle: "I MISS SHIORI",
+        DontMissCaption: "I Don't Miss Shiori",
         ImageAlt: "Meme",
         RandomVodLink: "Do your reps",
-        ErrorMessageChannelLink: "You can check FuwaMoco's channel yourself",
+        ErrorMessageChannelLink: "You can check Shiori's channel yourself",
         ErrorOccurred: "There was a problem checking stream status. {0}!",
         Embed: {
             TextLive: "Streaming: {0}",
@@ -28,14 +28,14 @@ AllStrings["en"] = {
         StatusStartingSoon: "Starting Soon",
         StatusStreamQueued: "Next Stream",
         NoStreamDummyStatus: "Current Stream",
-        NoStreamDummyTitle: "NOTHING BAUBAUBAUBAU",
-        MembersOnlySubtext: "(for Ruffians only!)",
+        NoStreamDummyTitle: "NOTHING UUUUUUUuuuuuu",
+        MembersOnlySubtext: "(for Nyakuza only!)",
         ThumbnailAltText: "Video Thumbnail"
     },
 
     Reps: {
         PageTitle: "Do your reps!",
-        SMMetaDescription: "Get a random FuwaMoco VOD to watch!",
+        SMMetaDescription: "Get a random Shiori VOD to watch!",
         VodInfoUploadDate: "Streamed or uploaded on {0}",
         PageCaption: "Watch this one!",
         RerollButton: "Reroll",
@@ -61,7 +61,7 @@ AllStrings["en"] = {
         PastStream: {
             immediate: "",
             forFuture: "",
-            forPast: `%@ without FuwaMoco`,
+            forPast: `%@ without Shiorin`,
             days: (days) => (days > 1 ? `${days} days` : `${days} day`),
             hours: (hours) => (hours > 1 ? `${hours} hours` : `${hours} hour`),
             minutes: (minutes) => (minutes > 1 ? `${minutes} minutes` : `${minutes} minute`),

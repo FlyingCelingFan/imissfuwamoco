@@ -17,7 +17,7 @@ class PostgresDatabase {
         } catch (e) {
             console.error("[_connect]", "error connecting", e)
         }
-    
+
         throw new Error("[_connect]: all connection attempts failed")
     }
     
