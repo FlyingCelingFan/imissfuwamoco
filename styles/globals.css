@@ -8,11 +8,11 @@ body {
 }
 
 a {
-    color: rgb(97, 232, 225);
+    color: rgb(242, 87, 87);
 }
 
 a:visited {
-    color: rgb(242, 87, 87);
+    color: rgb(0, 0, 0);
 }
 
 * {
