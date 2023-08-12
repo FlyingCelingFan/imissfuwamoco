@@ -1,0 +1,6 @@
+{
+    "crons": [{
+      "path": "/pages/api/internal/cron_update_vods.js",
+      "schedule": "0 10 * * *"
+    }]
+  }
