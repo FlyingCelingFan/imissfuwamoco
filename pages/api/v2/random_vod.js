@@ -1,7 +1,7 @@
 import { getDatabase } from "../../../server/data_sources"
 
 export default async function handler(req, res) {
-    if (req.method !== "GET") {
+    if (req.method !== "FETCH") {
         return res.status(405).json({ error: true, result: null })
     }
 
